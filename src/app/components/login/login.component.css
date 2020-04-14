@@ -1,17 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 .card {
     max-width: 400px;
     margin: 2em auto;
     text-align: center;
+    border: 55px solid #000;
+    border-radius: 30px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: #000;
-    padding: 80px; 
+    padding: 100px; 
     margin: auto;
-    margin-top: 10px;
+    margin-top: 100px;
   }
 
   .card-content {
@@ -32,8 +29,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .card-button {
     margin-right:5px;
     margin-bottom: 5px;
-}
-
-.icon {
-    margin-right: 20px;
 }
