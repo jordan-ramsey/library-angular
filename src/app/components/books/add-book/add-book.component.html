@@ -1,1 +1,34 @@
-<p>add-book works!</p>
+<mat-card class="card" id="card">
+    <mat-card-content class="card-content">
+      <div>
+        <mat-card-header style="margin-left:60px; margin-bottom: 0px;">
+          <mat-card-title class="mat-display-1 card-title">Add Book</mat-card-title>
+        </mat-card-header>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>person</mat-icon>          
+          <input [(ngModel)]="data.ISBN" #ISBN matInput placeholder="ISBN">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>library_books</mat-icon>
+          <input [(ngModel)]="data.author" #author matInput  placeholder="Author">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>title</mat-icon>          
+          <input [(ngModel)]="data.title" #title matInput placeholder="Title">
+        </mat-form-field><br/>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>calendar_today</mat-icon>          
+          <input [(ngModel)]="data.year" #year matInput placeholder="Year">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>filter_9_plus</mat-icon>          
+          <input [(ngModel)]="data.pages" #pages matInput placeholder="Pages">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>file_copy</mat-icon>          
+          <input [(ngModel)]="data.numOfCopies" #numOfCopies matInput placeholder="Number Of Copies">
+        </mat-form-field><br/>
+        <button color="primary" (click)='addBook()' mat-raised-button>Add Book</button>
+      </div>
+    </mat-card-content>
+</mat-card>
