@@ -1,11 +1,11 @@
 import { AddBookComponent } from './components/books/add-book/add-book.component';
-import { ReturnComponent } from './components/books/return/return.component';
 import { CheckoutBookComponent } from './components/books/checkout-book/checkout-book.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
+import { ReturnBookComponent } from './components/books/return-book/return-book.component';
 
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'checkout', pathMatch: 'full' },
       { path: 'checkout', component: CheckoutBookComponent },
       { path: 'add', component: AddBookComponent },
-      {path: 'return', component: ReturnComponent}
+      {path: 'return', component: ReturnBookComponent}
     ]
   }
 ];

@@ -22,8 +22,8 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { CheckoutBookComponent } from './components/books/checkout-book/checkout-book.component';
-import { ReturnComponent } from './components/books/return/return.component';
 import { AddBookComponent } from './components/books/add-book/add-book.component';
+import { ReturnBookComponent } from './components/books/return-book/return-book.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { AddBookComponent } from './components/books/add-book/add-book.component
     LoginLayoutComponent,
     DashboardLayoutComponent,
     CheckoutBookComponent,
-    ReturnComponent,
+    ReturnBookComponent,
     AddBookComponent
   ],
   imports: [

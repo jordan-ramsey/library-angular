@@ -1,7 +1,8 @@
 import { LibraryService } from './../../../services/library.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {MatSnackBar,   MatSnackBarConfig} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-checkout-book',
@@ -18,15 +19,21 @@ export class CheckoutBookComponent implements OnInit {
       l_id: null
     }
     
-  constructor(private libraryService: LibraryService) { }
+  constructor(private libraryService: LibraryService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
 
   checkoutBook() {
     this.libraryService.checkoutBook(this.data)
-      .then((response) => {
-        this.clearInputs();
+      .then((response: any) => {
+        if(response.status === 'success') {
+          this.clearInputs();
+        } else if (response.message ==='book already loaned') {
+            let config: MatSnackBarConfig = new MatSnackBarConfig();
+            config.duration = 4000;
+            this.snackBar.open("Book is already loaned", "close", config);
+        }
       });
   }
   clearInputs() {

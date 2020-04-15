@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { LibraryService } from 'src/app/services/library.service';
 
 @Component({
@@ -7,6 +7,9 @@ import { LibraryService } from 'src/app/services/library.service';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
+  @ViewChild('memberId', { static: true }) memberId: ElementRef;
+  @ViewChild('bookId', { static: true }) bookId: ElementRef;
+
   data = {
     b_id: null,
     m_id: null,
@@ -17,10 +20,15 @@ export class AddBookComponent implements OnInit {
   }
 
   addBook() {
-    this.libraryService.checkoutBook(this.data)
+    this.libraryService.addBook(this.data)
       .then((response) => {
         this.clearInputs();
       });
+  }
+
+  clearInputs() {
+    this.memberId.nativeElement.value ='';
+    this.bookId.nativeElement.value ='';
   }
 
 }

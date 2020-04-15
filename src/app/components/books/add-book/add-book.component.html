@@ -1,1 +1,18 @@
-<p>add-book works!</p>
+<mat-card class="card" id="card">
+    <mat-card-content class="card-content">
+      <div>
+        <mat-card-header style="margin-left:60px; margin-bottom: 50px;">
+          <mat-card-title class="mat-display-1 card-title">Checkout Book</mat-card-title>
+        </mat-card-header>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>person</mat-icon>          
+          <input [(ngModel)]="data.m_id" #memberId matInput placeholder="Member ID">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>library_books</mat-icon>
+          <input [(ngModel)]="data.b_id" #bookId matInput  placeholder="Book Copy ID">
+        </mat-form-field><br/>
+        <button color="primary" (click)='addBook()' mat-raised-button>Checkout</button>
+      </div>
+    </mat-card-content>
+</mat-card>
