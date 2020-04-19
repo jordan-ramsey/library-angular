@@ -24,6 +24,7 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import { CheckoutBookComponent } from './components/books/checkout-book/checkout-book.component';
 import { ReturnComponent } from './components/books/return/return.component';
 import { AddBookComponent } from './components/books/add-book/add-book.component';
+import { AddMemberComponent } from './components/members/add-member/add-member.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AddBookComponent } from './components/books/add-book/add-book.component
     DashboardLayoutComponent,
     CheckoutBookComponent,
     ReturnComponent,
-    AddBookComponent
+    AddBookComponent,
+    AddMemberComponent
   ],
   imports: [
     BrowserModule,
