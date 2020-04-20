@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
+import { AddMemberComponent } from './components/members/add-member/add-member.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'checkout', pathMatch: 'full' },
       { path: 'checkout', component: CheckoutBookComponent },
+      {path: 'addMember', component: AddMemberComponent},
       { path: 'add', component: AddBookComponent },
       {path: 'return', component: ReturnComponent}
     ]

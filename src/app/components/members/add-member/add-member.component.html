@@ -1,0 +1,26 @@
+<mat-card class="card" id="card">
+    <mat-card-content class="card-content">
+      <div>
+        <mat-card-header style="margin-left:60px; margin-bottom: 0px;">
+          <mat-card-title class="mat-display-1 card-title">Create Member</mat-card-title>
+        </mat-card-header>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>person</mat-icon>          
+          <input [(ngModel)]="data.name" #name matInput placeholder="name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>call</mat-icon>
+          <input [(ngModel)]="data.phone" #phone matInput  placeholder="phone">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>email</mat-icon>          
+          <input [(ngModel)]="data.email" #email matInput placeholder="email">
+        </mat-form-field><br/>
+        <mat-form-field>
+          <mat-icon class="icon" matPrefix>attach_money</mat-icon>          
+          <input [(ngModel)]="data.balance" #balance matInput placeholder="balance">
+        </mat-form-field><br/>
+        <button color="primary" (click)='addMember()' mat-raised-button>Add Member</button>
+      </div>
+    </mat-card-content>
+</mat-card>
