@@ -27,6 +27,7 @@ import { CheckoutBookComponent } from './components/books/checkout-book/checkout
 import { AddBookComponent } from './components/books/add-book/add-book.component';
 import { ReturnBookComponent } from './components/books/return-book/return-book.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AddMemberComponent } from './components/members/add-member/add-member.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     DashboardLayoutComponent,
     CheckoutBookComponent,
     ReturnBookComponent,
-    AddBookComponent
+    AddBookComponent,
+    AddMemberComponent
   ],
   imports: [
     BrowserModule,
