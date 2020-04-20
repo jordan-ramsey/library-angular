@@ -12,11 +12,14 @@ import {MatSnackBar,   MatSnackBarConfig} from '@angular/material/snack-bar';
 export class CheckoutBookComponent implements OnInit {
   @ViewChild('memberId', { static: true }) memberId: ElementRef;
   @ViewChild('bookId', { static: true }) bookId: ElementRef;
+  @ViewChild('date', { static: true }) date: ElementRef;
+
 
     data = {
       b_id: null,
       m_id: null,
-      l_id: null
+      l_id: null,
+      return_date: null
     }
     
   constructor(private libraryService: LibraryService, private snackBar: MatSnackBar) { }
@@ -37,7 +40,8 @@ export class CheckoutBookComponent implements OnInit {
       });
   }
   clearInputs() {
-    this.memberId.nativeElement.value ='';
-    this.bookId.nativeElement.value ='';
+    this.memberId.nativeElement.value = '';
+    this.bookId.nativeElement.value = '';
+    this.date.nativeElement.value = '';
   }
 }
