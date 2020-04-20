@@ -23,7 +23,7 @@ export class LibraryService {
   }
 
   addMember(data: any) {
-    let url = `${this.baseUrl}/addUser`;
+    let url = `${this.baseUrl}/addMember`;
     return this.http.post(url, data, {headers:this.header}).toPromise()
   }
 }
