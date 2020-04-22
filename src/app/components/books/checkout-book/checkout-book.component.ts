@@ -1,7 +1,8 @@
 import { LibraryService } from './../../../services/library.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {MatSnackBar,   MatSnackBarConfig} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-checkout-book',
@@ -11,26 +12,35 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class CheckoutBookComponent implements OnInit {
   @ViewChild('memberId', { static: true }) memberId: ElementRef;
   @ViewChild('bookId', { static: true }) bookId: ElementRef;
+  @ViewChild('date', { static: true }) date: ElementRef;
 
     data = {
       b_id: null,
       m_id: null,
-      l_id: null
+      l_id: null,
+      return_date: null
     }
     
-  constructor(private libraryService: LibraryService) { }
+  constructor(private libraryService: LibraryService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
 
   checkoutBook() {
     this.libraryService.checkoutBook(this.data)
-      .then((response) => {
-        this.clearInputs();
+      .then((response: any) => {
+        if(response.status === 'success') {
+          this.clearInputs();
+        } else if (response.message ==='book already loaned') {
+            let config: MatSnackBarConfig = new MatSnackBarConfig();
+            config.duration = 4000;
+            this.snackBar.open("Book is already loaned", "close", config);
+        }
       });
   }
   clearInputs() {
-    this.memberId.nativeElement.value ='';
-    this.bookId.nativeElement.value ='';
+    this.memberId.nativeElement.value = '';
+    this.bookId.nativeElement.value = '';
+    this.date.nativeElement.value = '';
   }
 }

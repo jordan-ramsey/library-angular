@@ -6,7 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { AddMemberComponent } from './components/members/add-member/add-member.component';
-import { ReturnComponent } from './components/books/return/return.component';
+import { ReturnBookComponent } from './components/books/return-book/return-book.component';
 
 
 const routes: Routes = [
@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: 'checkout', component: CheckoutBookComponent },
       {path: 'addMember', component: AddMemberComponent},
       { path: 'add', component: AddBookComponent },
-      {path: 'return', component: ReturnComponent}
+      {path: 'return', component: ReturnBookComponent}
     ]
   }
 ];

@@ -14,6 +14,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,8 +24,9 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { CheckoutBookComponent } from './components/books/checkout-book/checkout-book.component';
-import { ReturnComponent } from './components/books/return/return.component';
 import { AddBookComponent } from './components/books/add-book/add-book.component';
+import { ReturnBookComponent } from './components/books/return-book/return-book.component';
+import { MatNativeDateModule } from '@angular/material/core';
 import { AddMemberComponent } from './components/members/add-member/add-member.component';
 
 @NgModule({
@@ -34,7 +37,7 @@ import { AddMemberComponent } from './components/members/add-member/add-member.c
     LoginLayoutComponent,
     DashboardLayoutComponent,
     CheckoutBookComponent,
-    ReturnComponent,
+    ReturnBookComponent,
     AddBookComponent,
     AddMemberComponent
   ],
@@ -53,6 +56,8 @@ import { AddMemberComponent } from './components/members/add-member/add-member.c
     MatSnackBarModule,
     MatSidenavModule,
     MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
