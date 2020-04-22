@@ -14,7 +14,6 @@ export class CheckoutBookComponent implements OnInit {
   @ViewChild('bookId', { static: true }) bookId: ElementRef;
   @ViewChild('date', { static: true }) date: ElementRef;
 
-
     data = {
       b_id: null,
       m_id: null,

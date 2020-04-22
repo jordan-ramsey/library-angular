@@ -17,6 +17,11 @@ export class LibraryService {
     return this.http.post(url, data, {headers: this.header}).toPromise()
   }
 
+  returnBook(data: any) {
+    let url = `${this.baseUrl}/return`;
+    return this.http.post(url, data, {headers: this.header}).toPromise()
+  }
+
   addBook(data: any) {
     let url = `${this.baseUrl}/addBook`;
     return this.http.post(url, data, {headers:this.header}).toPromise()
