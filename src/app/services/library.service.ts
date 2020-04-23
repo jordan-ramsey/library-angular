@@ -27,8 +27,19 @@ export class LibraryService {
     return this.http.post(url, data, {headers:this.header}).toPromise()
   }
 
+  searchBook(data: any) {
+    let url = `${this.baseUrl}/search`;
+    return this.http.post(url, data, {headers:this.header}).toPromise()
+  }
+
   addMember(data: any) {
     let url = `${this.baseUrl}/addMember`;
     return this.http.post(url, data, {headers:this.header}).toPromise()
   }
+
+  getFrequentCheckouts() {
+    let url = `${this.baseUrl}/frequent`;
+    return this.http.get(url, {headers:this.header}).toPromise()
+  }
+
 }

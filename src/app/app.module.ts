@@ -10,6 +10,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { RouterModule, Routes } from '@angular/router';
@@ -28,6 +29,8 @@ import { AddBookComponent } from './components/books/add-book/add-book.component
 import { ReturnBookComponent } from './components/books/return-book/return-book.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AddMemberComponent } from './components/members/add-member/add-member.component';
+import { SearchComponent } from './components/search/search.component';
+import { FrequentCheckoutsComponent } from './components/frequent-checkouts/frequent-checkouts.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { AddMemberComponent } from './components/members/add-member/add-member.c
     CheckoutBookComponent,
     ReturnBookComponent,
     AddBookComponent,
-    AddMemberComponent
+    AddMemberComponent,
+    SearchComponent,
+    FrequentCheckoutsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,8 @@ import { AddMemberComponent } from './components/members/add-member/add-member.c
     MatSidenavModule,
     MatListModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

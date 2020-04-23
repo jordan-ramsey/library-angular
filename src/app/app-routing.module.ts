@@ -1,3 +1,5 @@
+import { FrequentCheckoutsComponent } from './components/frequent-checkouts/frequent-checkouts.component';
+import { SearchComponent } from './components/search/search.component';
 import { AddBookComponent } from './components/books/add-book/add-book.component';
 import { CheckoutBookComponent } from './components/books/checkout-book/checkout-book.component';
 import { NgModule } from '@angular/core';
@@ -23,7 +25,9 @@ const routes: Routes = [
       { path: 'checkout', component: CheckoutBookComponent },
       {path: 'addMember', component: AddMemberComponent},
       { path: 'add', component: AddBookComponent },
-      {path: 'return', component: ReturnBookComponent}
+      {path: 'return', component: ReturnBookComponent},
+      {path: 'search', component: SearchComponent},
+      {path: 'frequent', component: FrequentCheckoutsComponent}
     ]
   }
 ];
