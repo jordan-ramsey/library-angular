@@ -15,7 +15,7 @@ export class FrequentCheckoutsComponent implements OnInit {
   ngOnInit() {
     this.libraryService.getFrequentCheckouts()
       .then((response: any) => {
-        this.books = response.books;
+        this.books = response.books.reverse();
       });
   }
 

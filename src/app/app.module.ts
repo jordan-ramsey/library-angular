@@ -31,6 +31,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AddMemberComponent } from './components/members/add-member/add-member.component';
 import { SearchComponent } from './components/search/search.component';
 import { FrequentCheckoutsComponent } from './components/frequent-checkouts/frequent-checkouts.component';
+import { MemberInfoComponent } from './components/members/member-info/member-info.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FrequentCheckoutsComponent } from './components/frequent-checkouts/freq
     AddBookComponent,
     AddMemberComponent,
     SearchComponent,
-    FrequentCheckoutsComponent
+    FrequentCheckoutsComponent,
+    MemberInfoComponent
   ],
   imports: [
     BrowserModule,

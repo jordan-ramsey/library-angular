@@ -1,0 +1,33 @@
+<mat-card class="card" id="card">
+    <mat-card-header style="margin-left:60px; margin-bottom: 0px;">
+        <mat-card-title class="mat-display-1 card-title">Member Info</mat-card-title>
+      </mat-card-header>
+    <mat-card-content class="card-content">
+        <mat-form-field>
+            <mat-icon class="icon" matPrefix>person</mat-icon>          
+            <input [(ngModel)]="data.member_id" #memberId matInput placeholder="Member ID">
+          </mat-form-field><br/>
+          <button color="primary" (click)='getMemberInfo()' mat-raised-button>Get Info</button>
+        
+        <mat-list *ngIf="member" style="margin-top: 30px;">
+            <div mat-subheader>Current Loans</div>
+            <div *ngIf="loans.length == 0">
+                <p>There are no current loans associated with this member</p>
+            </div>
+            <mat-list-item *ngFor="let loan of loans">
+              <div mat-line>{{loan.ISBN}}</div>
+              <div mat-line>{{loan.bi_id}}</div>
+              <div mat-line> {{loan.title}} </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <div mat-subheader>Fines</div>
+            <div *ngIf="fines.length == 0">
+                <p>There are no fines associated with this member</p>
+            </div>
+            <mat-list-item *ngFor="let fine of fines">
+              <div mat-line>{{fine.amount}}</div>
+              <div mat-line>  </div>
+            </mat-list-item>
+          </mat-list>
+    </mat-card-content>
+</mat-card>

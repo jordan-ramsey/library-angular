@@ -37,6 +37,11 @@ export class LibraryService {
     return this.http.post(url, data, {headers:this.header}).toPromise()
   }
 
+  getMemberInfo(data: any) {
+    let url = `${this.baseUrl}/status/${data.member_id}`;
+    return this.http.get(url, {headers:this.header}).toPromise()
+  }
+
   getFrequentCheckouts() {
     let url = `${this.baseUrl}/frequent`;
     return this.http.get(url, {headers:this.header}).toPromise()

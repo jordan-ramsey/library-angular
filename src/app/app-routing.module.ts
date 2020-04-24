@@ -1,3 +1,4 @@
+import { MemberInfoComponent } from './components/members/member-info/member-info.component';
 import { FrequentCheckoutsComponent } from './components/frequent-checkouts/frequent-checkouts.component';
 import { SearchComponent } from './components/search/search.component';
 import { AddBookComponent } from './components/books/add-book/add-book.component';
@@ -27,7 +28,8 @@ const routes: Routes = [
       { path: 'add', component: AddBookComponent },
       {path: 'return', component: ReturnBookComponent},
       {path: 'search', component: SearchComponent},
-      {path: 'frequent', component: FrequentCheckoutsComponent}
+      {path: 'frequent', component: FrequentCheckoutsComponent},
+      {path: 'member-info', component: MemberInfoComponent}
     ]
   }
 ];
