@@ -9,6 +9,10 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 export class MemberInfoComponent implements OnInit {
   @ViewChild('memberId', { static: true }) memberId: ElementRef;
 
+  loanDisplayedColumns: string[] = ['isbn','bookId', 'title', 'author', 'year'];
+  fineDisplayedColumns: string[] = ['loan', 'amount', 'actions'];
+
+
   loans = [];
   fines = [];
   member = null;
