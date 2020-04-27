@@ -29,7 +29,7 @@ const routes: Routes = [
       {path: 'return', component: ReturnBookComponent},
       {path: 'search', component: SearchComponent},
       {path: 'frequent', component: FrequentCheckoutsComponent},
-      {path: 'member-info', component: MemberInfoComponent}
+      {path: 'member-info', component: MemberInfoComponent},
     ]
   }
 ];

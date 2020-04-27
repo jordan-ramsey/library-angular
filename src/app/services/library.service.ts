@@ -47,4 +47,8 @@ export class LibraryService {
     return this.http.get(url, {headers:this.header}).toPromise()
   }
 
+  payFine(data: any) {
+    let url = `${this.baseUrl}/payFine`;
+    return this.http.post(url, data, {headers:this.header}).toPromise()
+  }
 }

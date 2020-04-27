@@ -1,5 +1,6 @@
 import { LibraryService } from 'src/app/services/library.service';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'app-member-info',
@@ -8,10 +9,11 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 })
 export class MemberInfoComponent implements OnInit {
   @ViewChild('memberId', { static: true }) memberId: ElementRef;
+  @ViewChild('table', { static: false }) matTable: MatTable<any>;
+
 
   loanDisplayedColumns: string[] = ['isbn','bookId', 'title', 'author', 'year'];
   fineDisplayedColumns: string[] = ['loan', 'amount', 'actions'];
-
 
   loans = [];
   fines = [];
@@ -34,6 +36,25 @@ export class MemberInfoComponent implements OnInit {
   
         this.memberId.nativeElement.value = '';
       });
+  }
+
+  payFine(id: string) {
+    let data = {
+      l_id: id
+    }
+
+    this.libraryService.payFine(data) 
+      .then((response) => {
+        this.fines.forEach(fine => {
+          if (fine.loan === id) {
+            let indexToRemove = this.fines.indexOf(fine);
+            this.fines.splice(indexToRemove, 1);
+            this.member.balance = this.member.balance - fine.amount;
+            this.matTable.renderRows();
+          }
+        })
+      })
+
   }
 
 }

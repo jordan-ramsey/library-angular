@@ -16,10 +16,6 @@
           <mat-icon class="icon" matPrefix>email</mat-icon>          
           <input [(ngModel)]="data.email" #email matInput placeholder="email">
         </mat-form-field><br/>
-        <mat-form-field>
-          <mat-icon class="icon" matPrefix>attach_money</mat-icon>          
-          <input [(ngModel)]="data.balance" #balance matInput placeholder="balance">
-        </mat-form-field><br/>
         <button color="primary" (click)='addMember()' mat-raised-button>Add Member</button>
       </div>
     </mat-card-content>

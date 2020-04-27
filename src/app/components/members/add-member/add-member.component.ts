@@ -16,7 +16,6 @@ export class AddMemberComponent implements OnInit {
     name: null,
     phone: null,
     email: null,
-    balance: null,
   }
 
   constructor(private libraryService: LibraryService){}

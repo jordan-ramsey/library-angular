@@ -9,19 +9,19 @@
           </mat-form-field><br/>
           <button color="primary" (click)='getMemberInfo()' mat-raised-button>Get Info</button>
         
-          <div *ngIf="member" style="margin-top:40px; text-align:left;">
+          <div *ngIf="member" style="margin-top:40px;">
             <h2>Name: {{member.name}}</h2>
             <h2> Balance: ${{member.balance}}</h2>
             <h4>Current Loans</h4>
             <p *ngIf="loans.length == 0">There are no current loans</p>
             <table *ngIf="loans.length > 0" mat-table [dataSource]="loans" #matTable style="width:100%; text-align: left;">
-              <ng-container matColumnDef="isbn">
+              <ng-container style="margin-right: 20px;" matColumnDef="isbn">
                   <th mat-header-cell *matHeaderCellDef>ISBN </th>
                   <td mat-cell *matCellDef="let loan"> {{loan.ISBN}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="bookId">
-                    <th mat-header-cell *matHeaderCellDef>Book Id </th>
+                    <th mat-header-cell *matHeaderCellDef>Id </th>
                     <td mat-cell *matCellDef="let loan"> {{loan.bi_id}} </td>
                   </ng-container>
   
@@ -46,7 +46,7 @@
 
             <h4>Fines</h4>
             <p *ngIf="fines.length == 0">There are no current fines</p>
-            <table *ngIf="fines.length > 0" mat-table [dataSource]="fines" #matTable style="width:100%; text-align: left;">
+            <table [hidden]="fines.length == 0" mat-table [dataSource]="fines" #table style="width:100%; text-align: left;">
                 <ng-container matColumnDef="loan">
                     <th mat-header-cell *matHeaderCellDef>Loan ID </th>
                     <td mat-cell *matCellDef="let fine"> {{fine.loan}} </td>
@@ -60,7 +60,7 @@
                 <ng-container matColumnDef="actions">
                     <th mat-header-cell *matHeaderCellDef> Actions </th>
                     <td mat-cell *matCellDef="let fine">          
-                        <button color="primary" (click)='getMemberInfo()' mat-raised-button>Pay</button>
+                        <button color="primary" (click)='payFine(fine.loan)' mat-raised-button>Pay</button>
                     </td>
                   </ng-container>
               
